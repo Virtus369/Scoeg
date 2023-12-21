@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"
+	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.88.1">
+<title>台新銀行</title>
+
+
+
+
+<!-- Bootstrap core CSS -->
+<link href="/bootstrap5/css/bootstrap.css" rel="stylesheet">
+
+<style>
+.bd-placeholder-img {
+	font-size: 1.125rem;
+	text-anchor: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+@media ( min-width : 768px) {
+	.bd-placeholder-img-lg {
+		font-size: 3.5rem;
+	}
+}
+</style>
+<!-- Custom styles for this template -->
+<link href="/bootstrap5/css/sidebars.css" rel="stylesheet">
+</head>
+<body>
+
+	<main class="d-flex flex-wrap flex-row">
+		<!-- Sidebar -->
+		<div class="b-divider"></div>
+
+		<div class="flex-shrink-0 p-3 bg-danger text-white"
+			style="width: 280px;">
+			<a href="/"
+				class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+				<img width=100% src="/images/tsibLogo.png"></img>
+			</a>
+			<ul class="list-unstyled ps-0">
+				<li class="mb-1">
+					<button class="btn btn-toggle align-items-center rounded collapsed"
+						data-bs-toggle="collapse" data-bs-target="#score-set-collapse"
+						aria-expanded="true">評分卡設定</button>
+					<div class="collapse show" id="score-set-collapse">
+						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+							<li><a id="scList-link" href="#" class="link-dark rounded">評分卡維護</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="mb-1">
+					<button class="btn btn-toggle align-items-center rounded collapsed"
+						data-bs-toggle="collapse" data-bs-target="#sign-collapse"
+						aria-expanded="false">簽核模組</button>
+					<div class="collapse" id="sign-collapse">
+						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+							<li><a id="creditPage-link" href="#"
+								class="link-dark rounded">待簽核評分卡</a></li>
+							<li><a id="creditHistoryPage-link" href="#"
+								class="link-dark rounded">已簽核評分卡</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="mb-1">
+					<button class="btn btn-toggle align-items-center rounded collapsed"
+						data-bs-toggle="collapse" data-bs-target="#system-set-collapse"
+						aria-expanded="false">系統設定</button>
+					<div class="collapse" id="system-set-collapse">
+						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+							<li><a id="scmaPage-link" href="#" class="link-dark rounded">評分卡維護對應設定</a></li>
+							<li><a id="paramPage-link" href="#"
+								class="link-dark rounded">基本參數設定</a></li>
+							<li><a id="paramDerivaPage-link" href="#"
+								class="link-dark rounded">衍生變數設定</a></li>
+							<li><a id="scoegSysPage-link" href="#"
+								class="link-dark rounded">系統別資歷維護</a></li>
+							<li><a id="testDataPage-link" href="#"
+								class="link-dark rounded">測試案例維護</a></li>
+							<li><a id="importFilePage-link" href="#"
+								class="link-dark rounded">評分卡匯入</a></li>
+						</ul>
+					</div>
+				</li>
+
+				<li class="mb-1">
+					<button class="btn btn-toggle align-items-center rounded collapsed"
+						data-bs-toggle="collapse" data-bs-target="#report-collapse"
+						aria-expanded="false">報表</button>
+					<div class="collapse" id="report-collapse">
+						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+							<li><a id="traceLogPage-link" href="#"
+								class="link-dark rounded">評分卡異動查詢</a></li>
+							<li><a id="scorePage-link" href="#"
+								class="link-dark rounded">評分紀錄查詢</a></li>
+							<li><a id="scAuthPage-link" href="#"
+								class="link-dark rounded">評分卡操作權限查詢</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="mb-1">
+					<button class="btn btn-toggle align-items-center rounded collapsed"
+						data-bs-toggle="collapse" data-bs-target="#inbulk-collapse"
+						aria-expanded="false">整批評分</button>
+					<div class="collapse" id="inbulk-collapse">
+						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+							<li><a id="batchScoreListPage-link" href="#" class="link-dark rounded">整批評分維護</a></li>
+							<li><a id="uploadAttachFilePage-link" href="#" class="link-dark rounded">整批評分檔案維護</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="mb-1">
+					<button class="btn btn-toggle align-items-center rounded collapsed"
+						data-bs-toggle="collapse" data-bs-target="#document-collapse"
+						aria-expanded="false">文件</button>
+					<div class="collapse" id="document-collapse">
+						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+							<li><a id="documentPage-link" href="#" class="link-dark rounded">線上文件</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="mb-1">
+					<button class="btn btn-toggle align-items-center rounded collapsed"
+						data-bs-toggle="collapse"
+						data-bs-target="#system-management-collapse" aria-expanded="false">系統管理</button>
+					<div class="collapse" id="system-management-collapse">
+						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+							<li><a id="systemProperties-link" href="#" class="link-dark rounded">系統參數維護</a></li>
+							<li><a id="groupMaintainPage-link" href="#" class="link-dark rounded">群組權限維護</a></li>
+							<li><a id="userMaintainPage-link" href="#" class="link-dark rounded">使用者維護</a></li>
+							<li><a id="onlineUserMaintainPage-link" href="#" class="link-dark rounded">線上使用者維護</a></li>
+							<li><a id="codesPage-link" href="#" class="link-dark rounded">轉換代碼維護</a></li>							
+							<li><a id="newsPage-link" href="#" class="link-dark rounded">最新消息維護</a></li>
+							<li><a id="mailPage-link" href="#" class="link-dark rounded">Mail通知維護</a></li>
+							<li><a id="wsPage-link" href="#" class="link-dark rounded">Web Service
+									Client</a></li>
+							<li><a id="logManagementPage-link" href="#" class="link-dark rounded">日誌維護</a></li>
+							<li><a id="logListPage-link" href="#" class="link-dark rounded">Audit Log 查詢</a></li>
+							<li><a id="logSyncListPage-link" href="#" class="link-dark rounded">Audit Log 同步管理</a></li>
+							<li><a id="nonDutyAccessPage-link" href="#" class="link-dark rounded">休假異常交易紀錄</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<!-- Content Area -->
+
+		<div class="flex-grow-1 p-3" id="page-content">
+			<!-- Embedding news.html using iframe -->
+			<iframe src="/newsPage" id="content-iframe" width="100%" height="600"></iframe>
+		</div>
+
+	</main>
+
+
+	<script src="/bootstrap5/js/sidebars.js"></script>
+	<script src="/bootstrap5/js/bootstrap.bundle.js"></script>
+
+	<!-- JavaScript自訂義程式區塊 -->
+	<script>
+    function loadContent(content) {
+        fetch("/" + content)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("content-iframe").innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error fetching content:', error);
+                document.getElementById("content-iframe").innerHTML = "<p>載入內容失敗。</p>";
+            });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+    
+        // 監聽功能欄位點擊事件，並載入相應內容
+        //評分卡維護
+        document.getElementById("scList-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/scList";
+        });
+        //待簽核評分卡
+        document.getElementById("creditPage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/creditPage";
+        });
+        //已簽核評分卡
+        document.getElementById("creditHistoryPage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/creditHistoryPage";
+        });
+        //評分卡維護對應設定
+        document.getElementById("scmaPage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/scmaPage";
+        });
+        //基本參數設定        
+        document.getElementById("paramPage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/paramPage";
+        });
+        //衍生變數設定
+        document.getElementById("paramDerivaPage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/paramDerivaPage";
+        });
+        //系統別資料維護
+        document.getElementById("scoegSysPage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/scoegSysPage";
+        });
+        //測試案列維護
+        document.getElementById("testDataPage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/testDataPage";
+        });
+        //評分卡匯入
+        document.getElementById("importFilePage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/importFilePage";
+        });
+        //評分卡異動查詢
+        document.getElementById("traceLogPage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/traceLogPage";
+        });
+        //評分紀錄查詢
+        document.getElementById("scorePage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/scorePage";
+        });
+        //評分卡操作權限查詢
+        document.getElementById("scAuthPage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/scAuthPage";
+        });
+        //整批評分維護
+        document.getElementById("batchScoreListPage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/batchScoreListPage";
+        });
+        //整批評分檔案維護
+        document.getElementById("uploadAttachFilePage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/uploadAttachFilePage";
+        });
+        //線上文件
+        document.getElementById("documentPage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/documentPage";
+        });
+        //系統參數設定
+        document.getElementById("systemProperties-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/systemProperties";
+        });
+        //群組設定
+        document.getElementById("groupMaintainPage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/groupMaintainPage";
+        }); 
+        //使用者資料維護
+        document.getElementById("userMaintainPage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/userMaintainPage";
+        });
+        //使用者資料維護
+        document.getElementById("onlineUserMaintainPage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/onlineUserMaintainPage";
+        });
+        //轉換代碼維護
+        document.getElementById("codesPage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/codesPage";
+        });
+        //最新消息維護
+        document.getElementById("newsPage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/newsPage";
+        });
+		//Mail通知維護
+        document.getElementById("mailPage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/mailPage";
+        });
+        //Web Service Client
+        document.getElementById("wsPage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/wsPage";
+        });
+        //日誌維護
+        document.getElementById("logManagementPage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/logManagementPage";
+        });
+        //Audit Log查詢
+        document.getElementById("logListPage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/logListPage";
+        });
+        //Audit Log同步管理
+        document.getElementById("logSyncListPage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/logSyncListPage";
+        });
+        //休假異常交易紀錄
+        document.getElementById("nonDutyAccessPage-link").addEventListener("click", function () {
+        	document.getElementById("content-iframe").src = "/nonDutyAccessPage";
+        });
+    });
+</script>
+
+
+</body>
+</html>
