@@ -1,10 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>最新消息</title>
+<!-- Bootstrap core CSS -->
+<link href="/bootstrap5/css/bootstrap.css" rel="stylesheet">
 </head>
+<!-- 首頁隱藏MENU -->
+<style>
+.hideNewsMenu #newsMenu {
+	display: none;
+}
+</style>
+<!-- <body class="hideNewsMenu"> -->
 <body>
 	<h1>最新消息</h1>
+	<div id=newsMenu>
+		<ul class="nav nav-pills">
+			<li class="nav-item"><a class="nav-link" href="#" id="addNewsModal">新增</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">修改</a></li>
+			<li class="nav-item"><a class="nav-link" href="#" id="reloadBtn">重新載入</a>
+			</li>
+		</ul>
+	</div>
+
+	<main>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col" class="d-none">#</th>
+					<th scope="col">建立日期</th>
+					<th scope="col">主旨</th>
+					<th scope="col">建立者</th>
+				</tr>
+			</thead>
+			<tbody id="newsTable">
+				<tr th:each="newsItems : ${newsItems}">
+					<td th:text="${newsItems.sn}"></td>
+					<td th:text="${newsItems.news}"></td>
+					<td th:text="${newsItems.createUser}"></td>
+				</tr>
+			</tbody>
+
+		</table>
+	</main>
+	
+	
+	<!-- MODAL -->
+	<div class="modal fade" id="exampleModal" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">新增最新消息</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="mb-3">
+							<label for="message-text" class="col-form-label">訊息內容:</label>
+							<textarea class="form-control" id="message-text"></textarea>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-bs-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" id="addNewsBtn">新增最新消息</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="/bootstrap5/js/sidebars.js"></script>
+	<script src="/bootstrap5/js/bootstrap.bundle.js"></script>
+
+	<script>
+		document.getElementById('reloadBtn').addEventListener('click',
+				function() {
+					location.reload(true); // true 表示強制從服務器重新加載頁面
+				});
+
+		// Add the following code for displaying the modal
+		document.getElementById('addNewsModal').addEventListener(
+				'click',
+				function() {
+					var addNewsModal = new bootstrap.Modal(document
+							.getElementById('exampleModal'));
+					addNewsModal.show();
+				});
+		
+		var exampleModal = document.getElementById('exampleModal')
+		exampleModal.addEventListener('show.bs.modal', function(event) {
+			// Button that triggered the modal
+			var button = event.relatedTarget
+		    var button = event.relatedTarget;
+			// Extract info from data-bs-* attributes
+		
+			// Update the modal's content.
+// 			var modalTitle = exampleModal.querySelector('.modal-title')
+			var modalBodyInput = exampleModal
+					.querySelector('.modal-body input')
+		})
+		
+		
+		document.getElementById('addNewsBtn').addEventListener('click', function () {
+        // 在按钮点击时执行的逻辑
+        // 这里可以添加你的后端调用逻辑
+        // 使用fetch发送异步POST请求到后端接口
+        fetch('/newsService', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                // 传递需要的数据，如果有的话
+            })
+        })
+        .then(response => {
+            // 处理后端的响应，可以根据需要进行处理
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // 处理后端返回的数据
+//             console.log(data);
+            // 在这里可以更新前端页面，例如重新加载最新消息列表等
+            location.reload(true);
+        })
+        .catch(error => {
+            // 处理错误
+//             console.error('There was a problem with the fetch operation:', error);
+        });
+    });
+	</script>
+
 </body>
 </html>
