@@ -16,7 +16,13 @@ public class appPageController {
   private newsService newsService;
   
   // 首頁
-  @GetMapping("")
+  @GetMapping("/")
+  public String loginPage() {
+    return "login";
+  }
+  
+  // 首頁
+  @GetMapping("/index")
   public String viewHomePage() {
     return "index";
   }
